@@ -1,0 +1,421 @@
+/* RESETS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Catamaran', sans-serif;
+    line-height: 1.8em;
+    color: #333333;
+    font-size: 100%;
+    /* rem - fontsize of the root element */
+}
+
+
+/* styling generally applying for the whole document */
+
+
+/* root pseudoclass applies to the selector html */
+
+:root {
+    --primary-color: #333333;
+    --secondary-color: #444444;
+    --overlay-color: rgba(156, 48, 48, 0.4);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.3;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff1060;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* end of general full doc styling  */
+
+
+/* nav bar styling - FLEXBOX & GRID */
+
+.navbar {
+    font-size: 100%;
+    padding: 2.5% 0;
+    background-color: var(--overlay-color);
+}
+
+
+/* applies to all containers in the webpage  , override if needed by picking specific container later */
+
+.container {
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    /* content more than size of container will be clipped/hidden */
+    padding: 0 0;
+}
+
+
+/*GRID -  we want to display the elements h1 & ul in container as a grid  */
+
+.navbar .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: 1fr 1fr;  */
+    /* fr- fractional unit; 1fr = 1 part of available space, so above divides the available space into 2 */
+}
+
+.navbar .logo {
+    font-size: 150%;
+    padding-left: 5%;
+}
+
+
+/* FLEXBOX */
+
+.navbar .nav {
+    /* we first create a flex layout  */
+    display: flex;
+    /* how the flexbox is distributed in space  */
+    justify-content: center;
+    /* push the flexbox elements to the right end  */
+    justify-self: flex-end;
+    /* align elemts of the flex box to the centr of their partition  */
+    align-items: center;
+}
+
+
+/* remember that padding and margin are different */
+
+.navbar .nav a {
+    padding: 0 0.5em;
+}
+
+.navbar .nav a:hover {
+    color: rgb(202, 20, 20);
+}
+
+
+/* end of nav bar styling  */
+
+
+/* Different sections of the website  */
+
+
+/* showcase styling - section-a  */
+
+.section-a {
+    position: relative;
+    margin: 0 5%;
+    height: 100%;
+}
+
+.section-a .container {
+    /* max-width: 100%;
+    margin: auto; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* repeat(x,yfr) is same as writing yfr x times */
+    grid-gap: 3em;
+    /* align-items: stretch;
+    justify-content: stretch; */
+}
+
+
+/* For margins & paddings use %s */
+
+.section-a .container h1 {
+    font-size: 150%;
+    color: var(--primary-color);
+    margin: 50% 0 0 0;
+}
+
+.section-a .container p {
+    margin: 5% 0;
+    /* margin:(top bottom) (left right) */
+}
+
+
+/* child elements inside containers sections etc can take vh/vw units */
+
+.section-a .container img {
+    /* width: 50vw;*/
+    height: 100vh;
+    object-fit: cover;
+}
+
+.section-a .container #sec-a-div {
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+/* end of showcase styling - section-a */
+
+
+/* section-b styling */
+
+.section-b {
+    position: relative;
+    background: url('../img/section-b.jpg') no-repeat bottom center/cover;
+    height: 100vh;
+    /* since we want the bgimg to span whole space use vh */
+}
+
+
+/* section-b content  */
+
+.section-b-inner {
+    color: aliceblue;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* margin: auto;
+    max-width: 860px; */
+    padding: 10% 0;
+}
+
+
+/* can make this a utility if needed 
+section-b heading */
+
+.section-b-inner h3 {
+    font-size: 3em;
+    margin-top: 5%;
+}
+
+
+/* end of section-b styling */
+
+
+/* Gallery- section-c styling */
+
+.section-c {
+    position: relative;
+    height: 100%;
+}
+
+.section-c .gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.section-c .gallery a:first-child {
+    grid-row: 1/3;
+    grid-column: 1/3;
+    max-height: 100vh;
+}
+
+.section-c .gallery a:nth-child(2) {
+    grid-column: 3/5;
+    max-height: 50vh;
+}
+
+.section-c .gallery a:nth-child(3) {
+    max-height: 50vh;
+}
+
+.section-c .gallery a:nth-child(4) {
+    max-height: 50vh;
+}
+
+.section-c .gallery a:nth-child(5) {
+    max-height: 50vh;
+}
+
+.section-c .gallery a:nth-child(6) {
+    max-height: 50vh;
+}
+
+.section-c .gallery img,
+.section-c .gallery a {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* end of section-c styling */
+
+
+/* rem & em can be interchangibly used if you know the slight difference between both. */
+
+
+/* footer-styling */
+
+.section-footer {
+    background: var(--overlay-color);
+    color: aliceblue;
+    padding: 4rem 0;
+}
+
+.section-footer .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    margin: 0 5%;
+}
+
+.section-footer h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.section-footer h3 {
+    margin-bottom: 0.3rem;
+}
+
+.section-footer a {
+    line-height: 1.9;
+}
+
+
+/* end of footer styling */
+
+
+/* email form styling */
+
+.email-form {
+    width: 100%;
+    display: inline-block;
+    background-color: aliceblue;
+    position: relative;
+    border-radius: 20px;
+    line-height: 0;
+    margin-top: 1rem;
+}
+
+.email-form .form-control {
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+    color: aliceblue;
+    background-color: transparent;
+    font-family: inherit;
+    margin: 0;
+    padding: 0 3rem 0 1.5rem;
+    width: 100%;
+    height: 45px;
+    border-radius: 20px;
+}
+
+.email-form .submit {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background-color: aliceblue;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    color: var(--overlay-color);
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+}
+
+.email-form .submit:hover {
+    color: #ff1060;
+}
+
+
+/* end of email form styling */
+
+
+/* Utilities - can be re-used outside section also if needed - applies to all sections */
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: aliceblue;
+    padding: 1.2% 2%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    margin-top: 0;
+    /* border radius gives a rounded effect to the btn  */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--overlay-color);
+}
+
+
+/* end of utilities */
+
+
+/* Media queries for responsive design  */
+
+@media(max-width: 700px) {
+    .section-a .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        grid-gap: 0;
+    }
+    .section-a .container div:first-child {
+        order: 2
+    }
+    .section-a .container div:last-child {
+        order: 2
+    }
+    .section-a .container img {
+        height: 60vh;
+        object-fit: cover;
+    }
+    .section-a .container #sec-a-div {
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .section-a .container h1 {
+        margin: 0;
+    }
+    .section-a .container p {
+        margin: 0;
+    }
+    .section-b-inner h3 {
+        font-size: 2em;
+    }
+    .section-footer {
+        padding: 2em 0;
+    }
+    .section-footer .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

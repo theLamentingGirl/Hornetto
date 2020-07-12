@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- fonts needed that's being added and icons from fontawesome  -->
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1e5e41f8d8.js" crossorigin="anonymous"></script>
+
+    <!-- css styling  -->
+    <link rel="stylesheet" href="css/simple-lightbox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Hornetto - The ice-cream you want to lick </title>
+
+</head>
+
+<body>
+
+    <!-- HTML STARTS HERE -->
+
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Hornetto</h1>
+            <ul class="nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ShowCase/Home -->
+    <div id="home">
+        <section class="section-a">
+            <div class="container">
+                <div id="sec-a-div">
+                    <h1>The ice-creams you want to lick</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore temporibus ut, molestiae facere est iste magnam vel neque laborum error?
+                    </p>
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+
+                <img src="img/main-img.jpg" alt="">
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Overlay text  -->
+    <div id="about">
+        <section class="section-b">
+            <div class="overlay">
+                <div class="section-b-inner">
+                    <h3>Feast on the Creamilicious-ness</h3>
+                    <h2>Everyone's deprived and craving for this.</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae commodi nulla nobis dolore praesentium maxime in illo aperiam et corporis!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Gallery  -->
+    <div id="gallery">
+        <section class="section-c">
+            <div class="gallery">
+                <a href="img/img6.jpg" class="big"><img src="img/img6.jpg" alt="" /></a>
+                <a href="img/img2.jpg" class="big"><img src="img/img2.jpg" alt="" /></a>
+                <a href="img/img3.jpg" class="big"><img src="img/img3.jpg" alt="" /></a>
+                <a href="img/img4.jpg" class="big"><img src="img/img4.jpg" alt="" /></a>
+                <a href="img/img5.jpg" class="big"><img src="img/img5.jpg" alt="" /></a>
+                <a href="img/img1.jpg" class="big"><img src="img/img1.jpg" alt="" /></a>
+            </div>
+        </section>
+    </div>
+
+    <!-- footer  -->
+    <footer class="section-footer">
+        <div class="container">
+            <div>
+                <h2>For more drool worthy delicacies</h2>
+                <h3>Connect with us:</h3>
+                <a href="http://twitter.com">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <a href="http://facebook.com">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="http://youtube.com">
+                    <i class="fab fa-youtube fa-2x"></i>
+                </a>
+            </div>
+
+            <div>
+                <h3>More Info</h3>
+                <ul>
+                    <li><a href="#">All products</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Bulk orders</a></li>
+                    <li><a href="#">Customer Sevice</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Swirls</a></li>
+                    <li><a href="#">Scoops</a></li>
+                    <li><a href="#">Sundaes</a></li>
+                    <li><a href="#">Make your own ice-cream</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>For discounts, sign up</h3>
+                <form name="email-form" method="POST" data-netlify="true">
+                    <div class="email-form">
+                        <span class="form-control-wrap">
+                            <input type="email" name="email"
+                            id="email"
+                            size="40"
+                            class="form-control"
+                            placeholder="Email"/>
+                        </span>
+                        <button type="submit" class="form-control submit">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jquery hosting by googleapis, iquery can be hosted even by yourself if you download it on your pc  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/simple-lightbox.min.js"></script>
+    <script>
+        $(function() {
+
+            const $lightbox = $('.gallery a').simpleLightbox();
+        });
+    </script>
+</body>
+
+</html>
