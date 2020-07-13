@@ -48,6 +48,7 @@ ul {
 
 img {
     width: 100%;
+    /* height: 100%; */
 }
 
 
@@ -156,9 +157,13 @@ img {
 
 /* child elements inside containers sections etc can take vh/vw units */
 
-.section-a .container img {
-    /* width: 50vw;*/
-    height: 100vh;
+.section-a .container #sec-a-img {
+    height: 100%;
+}
+
+.section-a .container #sec-a-img img {
+    width: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -379,8 +384,14 @@ section-b heading */
 /* Media queries for responsive design  */
 
 @media(max-width: 700px) {
+    .section-a {
+        margin: 0;
+    }
     .section-a .container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        /* grid-template-columns: 1fr; */
         text-align: center;
         grid-gap: 0;
     }
@@ -391,11 +402,11 @@ section-b heading */
         order: 2
     }
     .section-a .container img {
-        height: 60vh;
+        /* height: 100%; */
         object-fit: cover;
     }
     .section-a .container #sec-a-div {
-        height: 40vh;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
